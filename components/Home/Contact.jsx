@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div id="contact" className="min-h-screen flex bg-[#F9FAFB] px-6 md:px-16 py-12">
+    <div className="h-screen flex bg-[#F9FAFB] px-6 md:px-16 py-12">
       {/* Left Section: Contact Form */}
       <div className="w-full md:w-1/2 flex flex-col justify-center pr-6 md:pr-12">
         {/* Heading */}

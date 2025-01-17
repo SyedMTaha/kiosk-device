@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const About = () => {
   return (
-    <div id="about" className="h-[80vh] flex items-center justify-center bg-[#FFEEEE] px-6 pt-12">
+    <div className="h-[80vh] flex items-center justify-center bg-[#FFEEEE] px-6 pt-12">
       {/* Left Section (Text) */}
       <div className="w-full md:w-3/5 flex flex-col gap-4 items-start justify-center px-8 md:px-12">
         <h1 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-snug">

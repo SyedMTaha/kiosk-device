@@ -6,12 +6,9 @@ import Ielts from './Ielts'
 import Contact from './Contact'
 import SuccessStories from './SuccessStories'
 import Subscription from './Subscription'
-import Navbar from '../Navbar'
-import Footer from '../Footer'
 const Home = () => {
     return (
         <div className="">
-            <Navbar/>
             <Screen1 />
             <Screen2 />
             <Ielts/>
@@ -19,7 +16,6 @@ const Home = () => {
             <About/>
             <SuccessStories/>
             <Contact/>
-            <Footer/>
         </div>
     )
 }

@@ -1,60 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/logo.png';
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true); // Track navbar visibility
-  const [lastScrollY, setLastScrollY] = useState(0); // Track last scroll position
-  const [touchStart, setTouchStart] = useState(0); // Track touch start position
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > 50 && currentScrollY > lastScrollY) {
-      // Scrolling down, hide navbar
-      setIsNavbarVisible(false);
-    } else if (currentScrollY < lastScrollY || currentScrollY < 50) {
-      // Scrolling up or near the top, show navbar
-      setIsNavbarVisible(true);
-    }
-
-    setLastScrollY(currentScrollY); // Update last scroll position
-  };
-
-  const handleTouchStart = (e) => {
-    setTouchStart(e.touches[0].clientY); // Get the starting touch position
-  };
-
-  const handleTouchEnd = (e) => {
-    const touchEnd = e.changedTouches[0].clientY;
-
-    // If swiped up (touchStart > touchEnd), show navbar
-    if (touchStart - touchEnd > 50) {
-      setIsNavbarVisible(true);
-    }
-  };
-
-  // Add event listeners for scroll and touch events
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('touchstart', handleTouchStart);
-    window.addEventListener('touchend', handleTouchEnd);
-
-    // Clean up event listeners on component unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchend', handleTouchEnd);
-    };
-  }, [lastScrollY, touchStart]);
-
   return (
-    <header className={`transition-transform fixed top-0 w-full z-50 bg-[#FFEEEE] duration-300 ${isNavbarVisible ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
+    <header className="bg-white shadow-md">
       <div className="container mx-auto px-6 py-2 flex items-center justify-between">
         {/* Logo on the left */}
         <img src={logo} alt="Logo" className="h-8" />
@@ -65,7 +20,7 @@ const Navbar = () => {
             {['Home', 'About', 'Services', 'Contact'].map((item) => (
               <li key={item}>
                 <a
-                  href={`/#${item.toLowerCase()}`}
+                  href={`#${item.toLowerCase()}`}
                   className="text-[#143761] text-lg font-semibold hover:text-[#DB1738] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#DB1738]"
                 >
                   {item}
@@ -77,12 +32,12 @@ const Navbar = () => {
 
         {/* Login and Signup buttons on the right */}
         <div className="flex space-x-4">
-          <Link to='/login' className="bg-[#143761] text-white py-2 px-4 rounded-md hover:bg-[#0c2a3b] transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#DB1738]">
+          <button className="bg-[#143761] text-white py-2 px-4 rounded-md hover:bg-[#0c2a3b] transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#DB1738]">
             Login
-          </Link>
-          <Link to="/signup" className="bg-[#DB1738] text-white py-2 px-4 rounded-md hover:bg-[#a2132c] transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#143761]">
+          </button>
+          <button className="bg-[#DB1738] text-white py-2 px-4 rounded-md hover:bg-[#a2132c] transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#143761]">
             Signup
-          </Link>
+          </button>
         </div>
       </div>
 

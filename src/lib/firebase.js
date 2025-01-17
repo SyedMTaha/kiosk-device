@@ -9,8 +9,8 @@ const firebaseConfig = {
   projectId: "ielts-538fd",
   storageBucket: "ielts-538fd.firebasestorage.app",
   messagingSenderId: "287067045911",
-  appId: "1:287067045911:web:ca745d017c75604f40dc52",
-  measurementId: "G-TVK61DELRX"
+  appId: "1:287067045911:web:4d5b140344b4841e40dc52",
+  measurementId: "G-43XEE5H2M7"
 };
 
 const app = initializeApp(firebaseConfig);

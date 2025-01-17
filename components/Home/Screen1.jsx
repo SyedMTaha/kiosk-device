@@ -3,7 +3,7 @@ import img from '../../assets/home-img1.png'
 
 const Screen1 = () => {
   return (
-    <div id="home" className="min-h-screen flex items-center justify-center bg-[#FFEEEE] px-6 pt-12">
+    <div className="h-[80vh] flex items-center justify-center bg-[#FFEEEE] px-6 pt-12">
       {/* Left Section */}
       <div className="w-full md:w-3/5 flex flex-col gap-4 items-start justify-center px-8 md:px-12">
         <p className="text-[#DB1738] text-lg font-semibold">Achieve IELTS Success</p>
