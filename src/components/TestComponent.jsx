@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CheckBoxes from "./CheckBoxes";
 import SelectSingleOptions from "./SelectSingleOption";
 import FillBlanks from './FillBlanks'; // Assuming FillBlanks component is created separately
@@ -7,10 +7,12 @@ const TestComponent = ({ questions, buttonColor, type }) => {
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [score, setScore] = useState(null);
   const [showResults, setShowResults] = useState(false);
-
   const dropdownTypes = ["list-of-headings", "matching-information", "choose-the-ending"];
   const fillBlanksTypes = ["summary-completion-1", "summary-completion-2"];
 
+  useEffect(()=>{
+    console.log(selectedAnswers)
+  },[selectedAnswers])
   const handleOptionChange = (questionId, option) => {
     const currentSelections = selectedAnswers[questionId] || [];
     if (currentSelections.includes(option)) {
@@ -75,11 +77,13 @@ const TestComponent = ({ questions, buttonColor, type }) => {
 
   return (
     <div className="px-10 py-8">
-      {questions.map((question, index) => (
+      {questions.map((question, index) => {
+        console.log(question.options)
+        return(
         <div key={question.id} className="mb-10">
           <p className="text-gray-800 font-medium mb-4">
             {index + 1}. {question.text}
-          </p>
+          </p> 
 
           {/* Render FillBlanks component if the type matches */}
           {fillBlanksTypes.includes(type) ? (
@@ -101,7 +105,7 @@ const TestComponent = ({ questions, buttonColor, type }) => {
             ) : (
               <CheckBoxes
                 questionId={question.id}
-                options={question.options}
+                options={question.options}   // checked till this
                 selectedAnswers={selectedAnswers}
                 correctOption={question.correctOption}
                 onChange={handleOptionChange}
@@ -110,7 +114,7 @@ const TestComponent = ({ questions, buttonColor, type }) => {
             )
           )}
         </div>
-      ))}
+      )})}
       {showResults ? (
         <div className="pb-10">
           <h4 className="text-gray-800 font-bold mt-6">

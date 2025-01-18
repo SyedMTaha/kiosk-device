@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import TestComponent from '../../TestComponent'
-import listOfHeadings from './data/paid-reading-list-of-headings.json'
-import sentenceCompletion from './data/paid-reading-sentence-completion.json'
+import TestComponent from '../../TestComponent';
+import listOfHeadings from './data/paid-reading-list-of-headings.json';
+import sentenceCompletion from './data/paid-reading-sentence-completion.json';
 import chooseEnding from './data/paid-reading-choose-ending.json';
 import matchingInformation from './data/paid-reading-matching-information.json';
 import mcqsOption1 from './data/paid-reading-mcqs-option-one.json';
 import mcqsOption2 from './data/paid-reading-mcqs-option-two.json';
-import trueFalseNotGiven from './data/paid-reading-true-false-not-given.json'
-import yesNoNotGiven from './data/paid-reading-yes-no-not-given.json'
-import summaryCompletion1 from './data/paid-reading-summary-completion.json'
-import summaryCompletion2 from './data/paid-reading-summary-completion-2.json'
+import trueFalseNotGiven from './data/paid-reading-true-false-not-given.json';
+import yesNoNotGiven from './data/paid-reading-yes-no-not-given.json';
+import labelDiagram from './data/paid-reading-labelling-diagram.json';
+import summaryCompletion1 from './data/paid-reading-summary-completion.json';
+import summaryCompletion2 from './data/paid-reading-summary-completion-2.json';
+import img1 from '../../../assets/label-1.png'
+import img2 from '../../../assets/label-2.png'
 
 const ReadingTest = () => {
   const { type } = useParams();
   const formattedType = type ? type.replace(/-/g, ' ') : 'Sample Questions';
   const [selectedDataset, setSelectedDataset] = useState([]);
-  console.log(type)
+  const [imgShow, setImgShow] = useState(false);
   const descriptions = {
     "table-completion": "Complete the table below.\nChoose ONE WORD from the passage for each answer.\nWrite your answers in boxes 1-7.",
     "choose-the-ending": "Complete each sentence with the correct ending, A-F, below. Write the correct letter, A-F, in boxes 1-7.\n\tA our response to music depends on our initial emotional state.\n\tВ neuron activity decreases if outcomes become predictable.\n\tС emotive music can bring to mind actual pictures and events.\n\tD experiences in our past can influence our emotional reaction to music.\n\tE emotive music delays giving listeners what they expect to hear.\n\tF neuron activity increases prior to key points in a musical piece.\n",
@@ -65,21 +68,22 @@ const ReadingTest = () => {
       case "summary-completion-2":
         setSelectedDataset(summaryCompletion2);
         break;
+      case "labelling-diagram":
+        setSelectedDataset(labelDiagram);
+        setImgShow(true);
+        break;
       default:
         setSelectedDataset([]);
         break;
     }
-  }, [type])
-  useEffect(() => {
-    console.log(selectedDataset[0]?.questions);
-  }, [selectedDataset])
+  }, [type]);
 
   const handleTabsAndNewlines = (text) => {
     return text.split("\n").map((line, index) => (
       <p key={index}>
         {line.split("\t").map((tab, idx) => (
           <>
-            {idx > 0 && <span className="mr-4">{' '}</span>} {/* Adding some space for tab */}
+            {idx > 0 && <span className="mr-4">{' '}</span>}
             {tab}
           </>
         ))}
@@ -92,7 +96,7 @@ const ReadingTest = () => {
   return (
     <div className="flex flex-col h-screen">
       {/* Header */}
-      <div className="bg-gray-800 text-white text-center py-4">
+      <div className="bg-[#143761] text-white text-center py-4">
         <h1 className="text-2xl font-bold">Reading - {formattedType}</h1>
       </div>
       <div className="mt-4 flex bg-blue-50 p-4 mx-auto w-full max-w-4xl rounded-xl">
@@ -111,7 +115,7 @@ const ReadingTest = () => {
       {/* Main Content */}
       <div className="flex flex-grow h-[90vh] border-t-4">
         {/* Left Section - Passage */}
-        <div className="w-1/2 p-4 overflow-y-scroll bg-[#FFFFEE]">
+        <div className="w-1/2 p-4 overflow-y-scroll bg-[#FFFFEE] custom-scrollbar">
           <h1 className="font-semibold text-3xl pb-2">Reading Passage</h1>
           {selectedDataset[0]?.passage?.split("\n").map((line, index) => (
             <p key={index}>{line}</p>
@@ -119,16 +123,24 @@ const ReadingTest = () => {
         </div>
 
         {/* Right Section - Questions */}
-        <div className="w-1/2 p-4 overflow-y-scroll bg-white">
+        <div className="w-1/2 p-4 overflow-y-scroll bg-white custom-scrollbar">
           <h1 className="font-semibold text-3xl pb-2">Questions</h1>
           {description && (
             <div className="text-sm pb-4">
               {handleTabsAndNewlines(description)}
             </div>
           )}
+          {imgShow && (
+            <div className="flex gap-2 ">
+              <img src={img1} alt="Label Diagram" className="w-[22vw] " />
+              <img src={img2} alt="Label Diagram" className="w-[22vw] " />
+            </div>
+          )}
+
           {selectedDataset && <TestComponent questions={selectedDataset[0]?.questions} buttonColor="bg-[#143761]" type={type} />}
         </div>
       </div>
+
       <div className="bg-gray-200 p-4 flex justify-between items-center">
         {/* Question Palette */}
         <div className="flex space-x-2">
@@ -145,6 +157,23 @@ const ReadingTest = () => {
         {/* Timer */}
         <div className="text-lg font-bold text-red-600">20:00</div>
       </div>
+
+      {/* Custom Scrollbar Styles */}
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background-color: #143761;
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background-color: #0d2a4a;
+        }
+      `}</style>
     </div>
   );
 };
