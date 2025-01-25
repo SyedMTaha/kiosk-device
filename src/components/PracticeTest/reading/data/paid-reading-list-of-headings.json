@@ -5,44 +5,121 @@
             {
                 "id": 1,
                 "text": "Paragraph A",
-                "correctOption": ["iii"],
-                "options": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"]
+                "correctOption": [
+                    "iii Good and bad aspects of steam technology are passed on"
+                ],
+                "options": [
+                    "i A period in cold conditions before the technology is assessed",
+                    "ii Marketing issues lead to failure",
+                    "iii Good and bad aspects of steam technology are passed on",
+                    "iv A possible solution to the issues of today",
+                    "v Further improvements lead to commercial orders",
+                    "vi Positive publicity at last for this quiet, clean, fast vehicle",
+                    "vii A disappointing outcome for customers",
+                    "viii A better option than the steam car arises"
+                ]
             },
             {
                 "id": 2,
                 "text": "Paragraph B",
-                "correctOption": ["viii"],
-                "options": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"]
+                "correctOption": [
+                    "viii A better option than the steam car arises"
+                ],
+                "options": [
+                    "i A period in cold conditions before the technology is assessed",
+                    "ii Marketing issues lead to failure",
+                    "iii Good and bad aspects of steam technology are passed on",
+                    "iv A possible solution to the issues of today",
+                    "v Further improvements lead to commercial orders",
+                    "vi Positive publicity at last for this quiet, clean, fast vehicle",
+                    "vii A disappointing outcome for customers",
+                    "viii A better option than the steam car arises"
+                ]
             },
             {
                 "id": 3,
                 "text": "Paragraph C",
-                "correctOption": ["vi"],
-                "options": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"]
+                "correctOption": [
+                    "vi Positive publicity at last for this quiet, clean, fast vehicle"
+                ],
+                "options": [
+                    "i A period in cold conditions before the technology is assessed",
+                    "ii Marketing issues lead to failure",
+                    "iii Good and bad aspects of steam technology are passed on",
+                    "iv A possible solution to the issues of today",
+                    "v Further improvements lead to commercial orders",
+                    "vi Positive publicity at last for this quiet, clean, fast vehicle",
+                    "vii A disappointing outcome for customers",
+                    "viii A better option than the steam car arises"
+                ]
             },
             {
                 "id": 4,
                 "text": "Paragraph D",
-                "correctOption": ["v"],
-                "options": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"]
+                "correctOption": [
+                    "v Further improvements lead to commercial orders"
+                ],
+                "options": [
+                    "i A period in cold conditions before the technology is assessed",
+                    "ii Marketing issues lead to failure",
+                    "iii Good and bad aspects of steam technology are passed on",
+                    "iv A possible solution to the issues of today",
+                    "v Further improvements lead to commercial orders",
+                    "vi Positive publicity at last for this quiet, clean, fast vehicle",
+                    "vii A disappointing outcome for customers",
+                    "viii A better option than the steam car arises"
+                ]
             },
             {
                 "id": 5,
                 "text": "Paragraph E",
-                "correctOption": ["vii"],
-                "options": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"]
+                "correctOption": [
+                    "vii A disappointing outcome for customers"
+                ],
+                "options": [
+                    "i A period in cold conditions before the technology is assessed",
+                    "ii Marketing issues lead to failure",
+                    "iii Good and bad aspects of steam technology are passed on",
+                    "iv A possible solution to the issues of today",
+                    "v Further improvements lead to commercial orders",
+                    "vi Positive publicity at last for this quiet, clean, fast vehicle",
+                    "vii A disappointing outcome for customers",
+                    "viii A better option than the steam car arises"
+                ]
             },
             {
                 "id": 6,
                 "text": "Paragraph F",
-                "correctOption": ["i"],
-                "options": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"]
+                "correctOption": [
+                    "i A period in cold conditions before the technology is assessed"
+                ],
+                "options": [
+                    "i A period in cold conditions before the technology is assessed",
+                    "ii Marketing issues lead to failure",
+                    "iii Good and bad aspects of steam technology are passed on",
+                    "iv A possible solution to the issues of today",
+                    "v Further improvements lead to commercial orders",
+                    "vi Positive publicity at last for this quiet, clean, fast vehicle",
+                    "vii A disappointing outcome for customers",
+                    "viii A better option than the steam car arises"
+                ]
             },
             {
                 "id": 7,
                 "text": "Paragraph G",
-                "correctOption": ["iv"],
-                "options": ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"]
+                "correctOption": [
+                    "iv A possible solution to the issues of today"
+                ],
+                "options": [
+                    "i A period in cold conditions before the technology is assessed",
+                    "ii Marketing issues lead to failure",
+                    "iii Good and bad aspects of steam technology are passed on",
+                    "iv A possible solution to the issues of today",
+                    "v Further improvements lead to commercial orders",
+                    "vi Positive publicity at last for this quiet, clean, fast vehicle",
+                    "vii A disappointing outcome for customers",
+                    "viii A better option than the steam car arises"
+                ]
             }
         ]
     }

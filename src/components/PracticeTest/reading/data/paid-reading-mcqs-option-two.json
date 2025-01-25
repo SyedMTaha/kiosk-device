@@ -5,31 +5,31 @@
             {
                 "id": 1,
                 "text": "Which TWO advantages of using newer buildings for green roofs are mentioned in Paragraph C of the passage?",
-                "options": {
-                    "A": "a longer growing season for edible produce",
-                    "B": "more economical use of water",
-                    "C": "greater water-storage capacity",
-                    "D": "ability to cultivate more plant types",
-                    "E": "a large surface area for growing plants"
-                },
+                "options": [
+                    "a longer growing season for edible produce",
+                    "more economical use of water",
+                    "greater water-storage capacity",
+                    "ability to cultivate more plant types",
+                    "a large surface area for growing plants"
+                ],
                 "correctOption": [
-                    "C",
-                    "D"
+                    "greater water-storage capacity",
+                    "ability to cultivate more plant types"
                 ]
             },
             {
                 "id": 2,
                 "text": "Which TWO aims of new variations on the concept of green roofs are mentioned in Paragraph E of the passage?",
-                "options": {
-                    "A": "to provide habitats for a wide range of species",
-                    "B": "to grow plants successfully even in the wettest climates",
-                    "C": "to regulate the temperature of the immediate environment",
-                    "D": "to generate power from a sustainable source",
-                    "E": "to collect water to supply other buildings"
-                },
+                "options": [
+                    "to provide habitats for a wide range of species",
+                    "to grow plants successfully even in the wettest climates",
+                    "to regulate the temperature of the immediate environment",
+                    "to generate power from a sustainable source",
+                    "to collect water to supply other buildings"
+                ],
                 "correctOption": [
-                    "A",
-                    "D"
+                    "to provide habitats for a wide range of species",
+                    "to generate power from a sustainable source"
                 ]
             }
         ]

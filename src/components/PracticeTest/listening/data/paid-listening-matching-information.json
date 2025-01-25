@@ -1,0 +1,40 @@
+[
+    {
+      "questions": [
+        {
+          "id": 1,
+          "text": "_________ Fundraising",
+          "correctOption": ["B"]
+        },
+        {
+          "id": 2,
+          "text": "_________ Litter collection",
+          "correctOption": ["G"]
+        },
+        {
+          "id": 3,
+          "text": "_________ ‘Playmates’",
+          "correctOption": ["D"]
+        },
+        {
+          "id": 4,
+          "text": "_________ Story Club",
+          "correctOption": ["A"]
+        },
+        {
+          "id": 5,
+          "text": "_________ First aid",
+          "correctOption": ["F"]
+        }
+      ],
+      "options":[
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    }
+  ]

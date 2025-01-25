@@ -55,13 +55,13 @@ const PaidScreen = () => {
                 "table completion"
             ],
             Listening: [
-                'Sentence Completion',
-                'Summary Completion',
+                'Complete Notes',
+                'Choose mcqs part-3',
+                'Choose mcqs part-2',
                 "Matching Box's Information",
-                'Labelling Maps',
-                "MCQ's - Choose One Letter",
-                "MCQ's - Choose Two Letters",
-                'Flow Chart Completion',
+                'Summary completion',
+                "Table completion",
+                "Maps",
             ],
             Speaking: [
                 'Pronunciation',

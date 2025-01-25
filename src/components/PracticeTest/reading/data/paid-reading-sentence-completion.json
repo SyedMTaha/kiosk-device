@@ -4,37 +4,37 @@
         "questions": [
             {
                 "id": 1,
-                "text": "Some food plants, including…………… are already grown indoors.",
+                "text": "Some food plants, including _________ are already grown indoors.",
                 "correct_option": ["tomatoes"]
             },
             {
                 "id": 2,
-                "text": "Vertical farms would be located in……………, meaning that there would be less need to take them long distances to customers.",
+                "text": "Vertical farms would be located in _________, meaning that there would be less need to take them long distances to customers.",
                 "correct_option": ["urban centres/centers"]
             },
             {
                 "id": 3,
-                "text": "Vertical farms could use methane from plants and animals to produce……………..",
+                "text": "Vertical farms could use methane from plants and animals to produce _________",
                 "correct_option": ["energy"]
             },
             {
                 "id": 4,
-                "text": "The consumption of………………… would be cut because agricultural vehicles would be unnecessary.",
+                "text": "The consumption of_________ would be cut because agricultural vehicles would be unnecessary.",
                 "correct_option": ["fossil fuel"]
             },
             {
                 "id": 5,
-                "text": "The fact that vertical farms would need…………….. light is a disadvantage.",
+                "text": "The fact that vertical farms would need _________ light is a disadvantage.",
                 "correct_option": ["artificial"]
             },
             {
                 "id": 6,
-                "text": "One form of vertical farming involves planting in…………….. which are not fixed.",
+                "text": "One form of vertical farming involves planting in_________ which are not fixed.",
                 "correct_option": ["(stacked) trays"]
             },
             {
                 "id": 7,
-                "text": "The most probable development is that food will be grown on……………… in towns and cities.",
+                "text": "The most probable development is that food will be grown on_________ in towns and cities.",
                 "correct_option": ["(urban) rooftops"]
             }
         ]

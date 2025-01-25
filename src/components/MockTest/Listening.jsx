@@ -3,7 +3,7 @@ import Footer from "../Footer";
 import Navbar from "../Navbar";
 import ArrowIcon from "../ArrowIcon";
 import listening from "../../assets/listening.png"
-import TestComponent from "../TestComponent";
+import TestComponent from "../PracticeTest/reading/ReadingTestComponent";
 
 
 const Listening = ({sampleQuestions}) => {

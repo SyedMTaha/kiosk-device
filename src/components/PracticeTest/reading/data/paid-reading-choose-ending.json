@@ -5,7 +5,7 @@
             {
                 "id": 1,
                 "text": "The Montreal researchers discovered that",
-                "correctOption": ["F neuron activity increases prior to key points in a musical piece."],
+                "correctOption": ["F"],
                 "options": [
                     "A",
                     "B",
@@ -18,7 +18,7 @@
             {
                 "id": 2,
                 "text": "Many studies have demonstrated that",
-                "correctOption": ["B neuron activity decreases if outcomes become predictable."],
+                "correctOption": ["B"],
                 "options": [
                     "A",
                     "B",
@@ -31,7 +31,7 @@
             {
                 "id": 3,
                 "text": "Meyer’s analysis of Beethoven’s music shows that",
-                "correctOption": ["E emotive music delays giving listeners what they expect to hear."],
+                "correctOption": ["E"],
                 "options": [
                     "A",
                     "B",
@@ -44,7 +44,7 @@
             {
                 "id": 4,
                 "text": "Earlier theories of music suggested that",
-                "correctOption": ["C emotive music can bring to mind actual pictures and events."],
+                "correctOption": ["C"],
                 "options": [
                     "A",
                     "B",

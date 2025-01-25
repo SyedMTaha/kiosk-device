@@ -1,0 +1,56 @@
+[
+    {
+      "questions": [
+        {
+          "id": 1,
+          "text": "**Reasons for overpopulation at Majete National Park** \n\t • strict enforcement of anti-poaching laws\n\t • successful breeding\n **Problems caused by elephant overpopulation** \n\t • greater competition, causing hunger for elephants  \n\t • damage to _________ in the park",
+          "correctOption": ["fences"]
+        },
+        {
+          "id": 2,
+          "text": "**The translocation process**\n\t • a suitable group of elephants from the same _________ was selected",
+          "correctOption": ["family"]
+        },
+        {
+          "id": 3,
+          "text": "\t • vets and park staff made use of _________  to help guide the elephants into an  open plain \n\t • elephants were immobilised with tranquilisers",
+          "correctOption": ["helicopters"]
+        },
+        {
+          "id": 4,
+          "text": "– this process had to be completed quickly to reduce _________",
+          "correctOption": ["stree"]
+        },
+        {
+          "id": 5,
+          "text": "– elephants had to be turned on their _________  to avoid damage to their lungs.",
+          "correctOption": ["sides"]
+        },
+        {
+          "id": 6,
+          "text": "– elephants’ _________ had to be monitored constantly",
+          "correctOption": ["breathing"]
+        },
+        {
+          "id": 7,
+          "text": "– tracking devices were fitted to the matriarchs \n – data including the size of their tusks and _________ was taken \n\t • elephants were taken by truck to their new reserve \n **Advantages of translocation at Nkhotakota Wildlife Park **",
+          "correctOption": ["feet"]
+        },
+        {
+          "id": 8,
+          "text": "\t • _________ opportunities",
+          "correctOption": ["employment"]
+        },
+        {
+          "id": 9,
+          "text": "\t • a reduction in the number of poachers and _________",
+          "correctOption": ["weapons"]
+        },
+        {
+          "id": 10,
+          "text": "\t • an example of conservation that other parks can follow \n\t • an increase in _________ as a contributor to GDP",
+          "correctOption": ["tourism"]
+        }
+      ]
+    }
+  ]

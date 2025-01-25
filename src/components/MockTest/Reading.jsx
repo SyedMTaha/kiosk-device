@@ -3,7 +3,7 @@ import Footer from "../Footer";
 import Navbar from "../Navbar";
 import reading from '../../assets/reading.png';
 import ArrowIcon from "../ArrowIcon";
-import TestComponent from "../TestComponent";
+import TestComponent from "../PracticeTest/reading/ReadingTestComponent";
 import { useLocation } from "react-router-dom";
 import db from '../../lib/firebase';
 import { doc, getDoc } from "firebase/firestore";

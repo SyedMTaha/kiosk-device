@@ -1,24 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import TestComponent from './ReadingTestComponent';
-import listOfHeadings from './data/paid-reading-list-of-headings.json';
-import matchingInformation from './data/paid-reading-matching-information.json';
-import chooseEnding from './data/paid-reading-choose-ending.json';
-import matchingInfromtaionWithNames from "./data/paid-reading-matching-informtaion-with-names.json"
-import sentenceCompletion from './data/paid-reading-sentence-completion.json';
-import mcqsOption1 from './data/paid-reading-mcqs-option-one.json';
-import mcqsOption2 from './data/paid-reading-mcqs-option-two.json';
-import trueFalseNotGiven from './data/paid-reading-true-false-not-given.json';
-import yesNoNotGiven from './data/paid-reading-yes-no-not-given.json';
-import labelDiagram from './data/paid-reading-labelling-diagram.json';
-import summaryCompletion1 from './data/paid-reading-summary-completion.json';
-import summaryCompletion2 from './data/paid-reading-summary-completion-2.json';
-import tableCompletion from './data/paid-reading-table-completion.json'
+import TestComponent from '../listening/ListeningTestComponent';
+
 
 import img1 from '../../../assets/label-1.png'
 import img2 from '../../../assets/label-2.png'
 
-const ReadingTest = () => {
+const ListeningTest = () => {
   const { type } = useParams();
   const formattedType = type ? type.replace(/-/g, ' ') : 'Sample Questions';
   const [selectedDataset, setSelectedDataset] = useState([]);
@@ -38,54 +26,54 @@ const ReadingTest = () => {
     "true-false-not-given": "Do the following statements agree with the information given in Reading Passage? In boxes 1-7, write \n\t'TRUE' if the statement agrees with the information\n\t'FALSE' if the statement contradicts the information\n\t'NOT GIVEN' if there is no information on this.",
     "yes-no-not-given": "Do the following statements agree with the views of the writer in Reading Passage? In boxes 1-5\n\t write 'YES' if the statement agrees with the views of the writer\n\t'NO' if the statement contradicts the views of the writer\n\t'NOT GIVEN' if it is impossible to say what the writer thinks about this."
   };
-  
-  useEffect(() => {
-    switch (type) {
-      case 'true-false-not-given':
-        setSelectedDataset(trueFalseNotGiven);
-        break;
-      case 'yes-no-not-given':
-        setSelectedDataset(yesNoNotGiven);
-        break;
-      case 'matching-information':
-        setSelectedDataset(matchingInformation);
-        break;
-      case 'sentence-completion':
-        setSelectedDataset(sentenceCompletion);
-        break;
-      case 'choose-the-ending':
-        setSelectedDataset(chooseEnding);
-        break;
-      case "mcq's---choose-two-letters":
-        setSelectedDataset(mcqsOption2);
-        break;
-      case "mcq's---choose-one-letter":
-        setSelectedDataset(mcqsOption1);
-        break;
-      case "list-of-headings":
-        setSelectedDataset(listOfHeadings);
-        break;
-      case "summary-completion-1":
-        setSelectedDataset(summaryCompletion1);
-        break;
-      case "summary-completion-2":
-        setSelectedDataset(summaryCompletion2);
-        break;
-      case "matching-statement-with-names":
-        setSelectedDataset(matchingInfromtaionWithNames);
-        break;
-      case "table-completion":
-        setSelectedDataset(tableCompletion);
-        break;
-      case "labelling-diagram":
-        setSelectedDataset(labelDiagram);
-        setImgShow(true);
-        break;
-      default:
-        setSelectedDataset([]);
-        break;
-    }
-  }, [type]);
+
+  //   useEffect(() => {
+  //     switch (type) {
+  //       case 'true-false-not-given':
+  //         setSelectedDataset(trueFalseNotGiven);
+  //         break;
+  //       case 'yes-no-not-given':
+  //         setSelectedDataset(yesNoNotGiven);
+  //         break;
+  //       case 'matching-information':
+  //         setSelectedDataset(matchingInformation);
+  //         break;
+  //       case 'sentence-completion':
+  //         setSelectedDataset(sentenceCompletion);
+  //         break;
+  //       case 'choose-the-ending':
+  //         setSelectedDataset(chooseEnding);
+  //         break;
+  //       case "mcq's---choose-two-letters":
+  //         setSelectedDataset(mcqsOption2);
+  //         break;
+  //       case "mcq's---choose-one-letter":
+  //         setSelectedDataset(mcqsOption1);
+  //         break;
+  //       case "list-of-headings":
+  //         setSelectedDataset(listOfHeadings);
+  //         break;
+  //       case "summary-completion-1":
+  //         setSelectedDataset(summaryCompletion1);
+  //         break;
+  //       case "summary-completion-2":
+  //         setSelectedDataset(summaryCompletion2);
+  //         break;
+  //       case "matching-statement-with-names":
+  //         setSelectedDataset(matchingInfromtaionWithNames);
+  //         break;
+  //       case "table-completion":
+  //         setSelectedDataset(tableCompletion);
+  //         break;
+  //       case "labelling-diagram":
+  //         setSelectedDataset(labelDiagram);
+  //         setImgShow(true);
+  //         break;
+  //       default:
+  //         setSelectedDataset([]);
+  //         break;
+  //     }
+  //   }, [type]);
 
   const handleTabsAndNewlines = (text) => {
     return text.split("\n").map((line, index) => (
@@ -105,7 +93,7 @@ const ReadingTest = () => {
   return (
     <div className="flex flex-col h-screen">
       {/* Header */}
-      <div className="bg-[#143761] text-white text-center py-4">
+      <div className="bg-[#DB1738] text-white text-center py-4">
         <h1 className="text-2xl font-bold">Reading - {formattedType}</h1>
       </div>
       <div className="mt-4 flex bg-blue-50 p-4 mx-auto w-full max-w-4xl rounded-xl">
@@ -122,49 +110,22 @@ const ReadingTest = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-grow h-[90vh] border-t-4">
-        {/* Left Section - Passage */}
-        <div className="w-1/2 p-4 overflow-y-scroll bg-[#FFFFEE] custom-scrollbar">
-          <h1 className="font-semibold text-3xl pb-2">Reading Passage</h1>
-          {selectedDataset[0]?.passage?.split("\n").map((line, index) => (
-            <p key={index}>{line}</p>
-          ))}
+      <div className="h-screen py-6 flex flex-col gap-6 px-5">
+        <div className="">
+          <button
+            onClick={() => {
+              const audio = new Audio('path_to_your_audio_file.mp3');
+              audio.play();
+            }}
+            className="text-xl font-semibold text-blue-600 hover:text-blue-800"
+          >
+            Play Audio
+          </button>
         </div>
-
-        {/* Right Section - Questions */}
-        <div className="w-1/2 p-4 overflow-y-scroll bg-white custom-scrollbar">
-          <h1 className="font-semibold text-3xl pb-2">Questions</h1>
-          {description && (
-            <div className="text-sm pb-4">
-              {handleTabsAndNewlines(description)}
-            </div>
-          )}
-          {imgShow && (
-            <div className="flex gap-2 ">
-              <img src={img1} alt="Label Diagram" className="w-[22vw] " />
-              <img src={img2} alt="Label Diagram" className="w-[22vw] " />
-            </div>
-          )}
-
-          {selectedDataset && <TestComponent questions={selectedDataset[0]?.questions} buttonColor="bg-[#143761]" type={type} />}
+        <div className="">
+          <h1 className="text-3xl font-semibold">Questions</h1>
+          {selectedDataset && <TestComponent questions={selectedDataset[0]?.questions} buttonColor="bg-[#DB1738]" type={type} />}
         </div>
-      </div>
-
-      <div className="bg-gray-200 p-4 flex justify-between items-center">
-        {/* Question Palette */}
-        <div className="flex space-x-2">
-          {selectedDataset[0]?.questions?.map((_, index) => (
-            <button
-              key={index}
-              className="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600"
-            >
-              {index + 1}
-            </button>
-          ))}
-        </div>
-
-        {/* Timer */}
-        <div className="text-lg font-bold text-red-600">20:00</div>
       </div>
 
       {/* Custom Scrollbar Styles */}
@@ -187,4 +148,4 @@ const ReadingTest = () => {
   );
 };
 
-export default ReadingTest;
+export default ListeningTest;

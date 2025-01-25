@@ -11,6 +11,7 @@ import Listening from './components/MockTest/Listening';
 import Reading from './components/MockTest/Reading';
 import PaidScreen from './components/Home/PaidScreen';
 import ReadingTest from './components/PracticeTest/reading/reading';
+import ListeningTest from './components/PracticeTest/listening/listening';
 
 function ScrollToTop() {
   const location = useLocation();
@@ -38,7 +39,7 @@ function App() {
         <Route path="/paiduser/general" element={<PaidScreen />} />
         <Route path="/paiduser/academic" element={<PaidScreen />} />
         <Route path="/paiduser/reading/:type" element={<ReadingTest />} />
-        <Route path="/paiduser/listening/:type" element={<ReadingTest />} />
+        <Route path="/paiduser/listening/:type" element={<ListeningTest />} />
         <Route path="/paiduser/speaking/:type" element={<ReadingTest />} />
         <Route path="/paiduser/writing/:type" element={<ReadingTest />} />
       </Routes>
