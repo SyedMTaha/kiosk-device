@@ -11,7 +11,8 @@ const MatchingInformation = ({ dataset }) => {
   const [options, setOptions] = useState([...dataset[0].options]); // Copy of options
   const [draggedOption, setDraggedOption] = useState(null);
   const [score, setScore] = useState(0);
-  const [finished, setFinished] = useState(false)
+  const [finished, setFinished] = useState(false);
+  const [showAnswersModal, setShowAnswersModal] = useState(false); // State to control modal visibility
 
   // Handle drag start for options and fields
   const handleDragStart = (option, source, sourceQuestionId = null) => {
@@ -157,6 +158,15 @@ const MatchingInformation = ({ dataset }) => {
     );
   };
 
+  // Handle showing the answers modal
+  const openAnswersModal = () => {
+    setShowAnswersModal(true);
+  };
+
+  const closeAnswersModal = () => {
+    setShowAnswersModal(false);
+  };
+
   return (
     <div className="max-w-4xl mx-auto py-8 px-4 relative">
       <div className="grid grid-cols-2 gap-8">
@@ -164,8 +174,7 @@ const MatchingInformation = ({ dataset }) => {
         <div className="text-gray-800 text-lg space-y-4 pb-4">
           {dataset[0].questions.map((question) => (
             <div key={question.id} className="mb-4 flex items-center">
-              {question.id}. 
-              {renderQuestion(question.text, question.id)}
+              {question.id}. {renderQuestion(question.text, question.id)}
             </div>
           ))}
         </div>
@@ -220,6 +229,16 @@ const MatchingInformation = ({ dataset }) => {
           <div className="fixed bottom-4 left-4  bg-[#DB1738] font-semibold text-white px-6 py-3 rounded-lg">
             Score: {score} / {dataset[0]?.questions.length}
           </div>
+
+          {/* View Answers Link */}
+          <div className="fixed bottom-7 left-[12vw] text-xl font-semibold text-blue-600 cursor-pointer">
+            <span
+              className="underline"
+              onClick={openAnswersModal}
+            >
+              View Answers
+            </span>
+          </div>
         </>
       ) : (
         <button
@@ -232,6 +251,28 @@ const MatchingInformation = ({ dataset }) => {
         >
           Finish
         </button>
+      )}
+
+      {/* Modal for Viewing Answers */}
+      {showAnswersModal && (
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-lg max-w-xl w-full">
+            <h2 className="text-2xl font-semibold mb-4">Answers</h2>
+            <ul className="space-y-4">
+              {dataset[0].questions.map((question) => (
+                <li key={question.id}>
+                  <strong>Question {question.id}:</strong> {question.correctOption.join(', ')}
+                </li>
+              ))}
+            </ul>
+            <button
+              className="mt-4 px-6 py-3 rounded-lg text-white font-semibold bg-[#DB1738] hover:bg-[#C21530]"
+              onClick={closeAnswersModal}
+            >
+              Close
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );

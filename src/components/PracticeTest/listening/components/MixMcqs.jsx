@@ -5,6 +5,7 @@ const MixMcqs = ({ dataset }) => {
   const [isAllAnswered, setIsAllAnswered] = useState(false);
   const [score, setScore] = useState(null);
   const [quizFinished, setQuizFinished] = useState(false);
+  const [showModal, setShowModal] = useState(false); // State for modal visibility
 
   // Function to handle option change (either for radio or checkbox)
   const handleOptionChange = (questionId, option, isMultipleChoice) => {
@@ -77,6 +78,16 @@ const MixMcqs = ({ dataset }) => {
     setQuizFinished(false);
   };
 
+  // Function to close the modal
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  // Function to open the modal
+  const openModal = () => {
+    setShowModal(true);
+  };
+
   return (
     <div className="max-w-4xl mx-auto py-8 px-4">
       {dataset[0].questions.map((question) => {
@@ -141,7 +152,39 @@ const MixMcqs = ({ dataset }) => {
               Retry
             </button>
           </div>
+
+          {/* View Answers Link */}
+          <div className="fixed bottom-11 left-[14vw] text-xl font-semibold text-blue-600 cursor-pointer">
+            <span
+              className="underline"
+              onClick={openModal}
+            >
+              View Answers
+            </span>
+          </div>
         </>
+      )}
+
+      {/* Modal for Viewing Answers */}
+      {showModal && (
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-lg max-w-xl w-full">
+            <h2 className="text-2xl font-semibold mb-4">Answers</h2>
+            <ul className="space-y-4">
+              {dataset[0].questions.map((question) => (
+                <li key={question.id}>
+                  <strong>Question {question.id}:</strong> {question.correctOption.join(', ')}
+                </li>
+              ))}
+            </ul>
+            <button
+              className="mt-4 px-6 py-3 rounded-lg text-white font-semibold bg-[#DB1738] hover:bg-[#C21530]"
+              onClick={closeModal}
+            >
+              Close
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );
