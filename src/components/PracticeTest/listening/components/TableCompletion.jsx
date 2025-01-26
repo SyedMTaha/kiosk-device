@@ -44,6 +44,14 @@ const TableCompletion = ({ dataset }) => {
     return (
         <div className="p-4 relative pb-16">
             <table className="table-auto border-collapse border border-gray-300 w-full">
+                <thead>
+                    <tr className="bg-gray-200">
+                        <th className="border border-gray-300 p-4">LOCATION</th>
+                        <th className="border border-gray-300 p-4">JOB TITLE</th>
+                        <th className="border border-gray-300 p-4">RESPONSIBILITIES INCLUDED</th>
+                        <th className="border border-gray-300 p-4">PAY AND CONDITIONS</th>
+                    </tr>
+                </thead>
                 <tbody>
                     {questions
                         .reduce((rows, question, index) => {
@@ -111,10 +119,11 @@ const TableCompletion = ({ dataset }) => {
                 </>
             ) : (
                 <button
-                    className={`fixed bottom-4 right-4 px-6 py-3 rounded-lg text-white font-semibold shadow-lg ${allAnswered
+                    className={`fixed bottom-4 right-4 px-6 py-3 rounded-lg text-white font-semibold shadow-lg ${
+                        allAnswered
                             ? "bg-[#DB1738] hover:bg-[#C21530]"
                             : "bg-gray-400 cursor-not-allowed"
-                        }`}
+                    }`}
                     disabled={!allAnswered}
                     onClick={calculateScore}
                 >

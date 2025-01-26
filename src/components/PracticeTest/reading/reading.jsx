@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import TestComponent from './ReadingTestComponent';
 import listOfHeadings from './data/paid-reading-list-of-headings.json';
 import matchingInformation from './data/paid-reading-matching-information.json';
@@ -22,12 +22,13 @@ const ReadingTest = () => {
   const { type } = useParams();
   const formattedType = type ? type.replace(/-/g, ' ') : 'Sample Questions';
   const [selectedDataset, setSelectedDataset] = useState([]);
+  const navigate=useNavigate();
   const [imgShow, setImgShow] = useState(false);
   const descriptions = {
     "table-completion": "Complete the table below.\nChoose ONE WORD from the passage for each answer.\nWrite your answers in boxes 1-7.",
     "choose-the-ending": "Complete each sentence with the correct ending, A-F, below. Write the correct letter, A-F, in boxes 1-7.\n\tA our response to music depends on our initial emotional state.\n\tВ neuron activity decreases if outcomes become predictable.\n\tС emotive music can bring to mind actual pictures and events.\n\tD experiences in our past can influence our emotional reaction to music.\n\tE emotive music delays giving listeners what they expect to hear.\n\tF neuron activity increases prior to key points in a musical piece.\n",
     "labelling-diagram": "Label the diagrams below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-6.",
-    "list-of-headings": "Reading Passage has seven paragraphs, A-G. Choose the correct heading for each paragraph from the list of headings below. Write the correct number, i-viii, in boxes 1-7.\n List Od Headings \n\ti. A period in cold conditions before the technology is assessed\n\tii. Marketing issues lead to failure\n\tiii. Good and bad aspects of steam technology are passed on\n\tiv. A possible solution to the issues of today\n\tv. Further improvements lead to commercial orders\n\tvi. Positive publicity at last for this quiet, clean, fast vehicle\n\tvii. A disappointing outcome for customers\n\tviii. A better option than the steam car arises",
+    "list-of-headings": "Reading Passage has seven paragraphs, A-G. Choose the correct heading for each paragraph from the list of headings below. Write the correct number, i-viii, in boxes 1-7.\n List Of Headings \n\ti. &nbsp;&nbsp;&nbsp;&nbsp;A period in cold conditions before the technology is assessed\n\tii.&nbsp;&nbsp;&nbsp;&nbsp;Marketing issues lead to failure\n\tiii. &nbsp;&nbsp;Good and bad aspects of steam technology are passed on\n\tiv. &nbsp;&nbsp;A possible solution to the issues of today\n\tv. &nbsp;&nbsp;&nbsp;Further improvements lead to commercial orders\n\tvi. &nbsp;&nbsp;Positive publicity at last for this quiet, clean, fast vehicle\n\tvii. &nbsp;&nbsp;A disappointing outcome for customers\n\tviii. &nbsp;A better option than the steam car arises",
     "matching-information": "Reading Passage has eight sections, A-H. Which paragraph contains the following information? Write the correct letter, A-H, in boxes 1-7.\n NB: You may use any letter more than once.",
     "matching-statement-with-names": "Look at the following statements (Question 1-7) and the list of people below. Match each statement with the correct person, A-G. Write the correct letter, A-G, in boxes 1-7. \nNB: You may use any letter more than once.\nList of People\n\tA.	Kanayo F. Nwanze\n\tB.	Sophia Murphy\n\tC.	Shenggen Fan\n\tD.	Rokeya Kabir\n\tE.	Pat Mooney\n\tF.	Giel Ton\n\tG.	Sonali Bisht",
     "mcq's---choose-one-letter": "Choose the correct letter, A, B, C, or D. Write the correct letter in boxes 1-7.",
@@ -35,8 +36,8 @@ const ReadingTest = () => {
     "sentence-completion": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 1-7.",
     "summary-completion-1": "Complete the summary using the list of words, A-H, below. Write the correct letter, A-H, in boxes 1-7.\n\tA.	laughter\n\tB.	relaxing\n\tC.	boring\n\tD.	anxiety\n\tE.	stimulating\n\tF.	emotion\n\tG.	enjoyment\n\tH.	amusing\n\t",
     "summary-completion-2": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes.",
-    "true-false-not-given": "Do the following statements agree with the information given in Reading Passage? In boxes 1-7, write \n\t'TRUE' if the statement agrees with the information\n\t'FALSE' if the statement contradicts the information\n\t'NOT GIVEN' if there is no information on this.",
-    "yes-no-not-given": "Do the following statements agree with the views of the writer in Reading Passage? In boxes 1-5\n\t write 'YES' if the statement agrees with the views of the writer\n\t'NO' if the statement contradicts the views of the writer\n\t'NOT GIVEN' if it is impossible to say what the writer thinks about this."
+    "true-false-not-given": "Do the following statements agree with the information given in Reading Passage? In boxes 1-7, write: \n\t**TRUE** if the statement agrees with the information\n\t**FALSE** if the statement contradicts the information\n\t**NOT GIVEN** if there is no information on this.",
+    "yes-no-not-given": "Do the following statements agree with the views of the writer in Reading Passage? In boxes 1-5\n\t write **YES** if the statement agrees with the views of the writer\n\t**NO** if the statement contradicts the views of the writer\n\t**NOT GIVEN** if it is impossible to say what the writer thinks about this."
   };
   
   useEffect(() => {
@@ -88,25 +89,33 @@ const ReadingTest = () => {
   }, [type]);
 
   const handleTabsAndNewlines = (text) => {
-    return text.split("\n").map((line, index) => (
-      <p key={index}>
-        {line.split("\t").map((tab, idx) => (
-          <>
-            {idx > 0 && <span className="mr-4">{' '}</span>}
-            {tab}
-          </>
-        ))}
-      </p>
-    ));
-  };
+    return text.split("\n").map((line, index) => {
+      // Replace '**' for bold text
+      line = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      
+      // Replace '\t' with four spaces
+      line = line.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+  
+      return (
+        <p key={index} dangerouslySetInnerHTML={{ __html: line }} />
+      );
+    });
+  };  
 
   const description = descriptions[type] || '';
 
   return (
     <div className="flex flex-col h-screen">
       {/* Header */}
-      <div className="bg-[#143761] text-white text-center py-4">
-        <h1 className="text-2xl font-bold">Reading - {formattedType}</h1>
+      <div className="bg-[#143761] text-white flex items-center justify-between py-4 px-6">
+        <button
+          onClick={() => navigate(-1)} // Navigate one step back
+          className="text-white border-2 border-white rounded-full px-3 py-1 text-sm"
+        >
+          Back
+        </button>
+        <h1 className="text-2xl font-bold mx-auto">Listening - {formattedType}</h1>
+        <div className="w-12" /> {/* Spacer to balance layout */}
       </div>
       <div className="mt-4 flex bg-blue-50 p-4 mx-auto w-full max-w-4xl rounded-xl">
         <iframe
@@ -124,7 +133,7 @@ const ReadingTest = () => {
       {/* Main Content */}
       <div className="flex flex-grow h-[90vh] border-t-4">
         {/* Left Section - Passage */}
-        <div className="w-1/2 p-4 overflow-y-scroll bg-[#FFFFEE] custom-scrollbar">
+        <div className="w-1/2 p-4 overflow-y-scroll bg-[#FFFFEE] custom-scrollbar font-poppins">
           <h1 className="font-semibold text-3xl pb-2">Reading Passage</h1>
           {selectedDataset[0]?.passage?.split("\n").map((line, index) => (
             <p key={index}>{line}</p>

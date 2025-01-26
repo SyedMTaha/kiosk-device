@@ -65,7 +65,7 @@ const Maps = ({ dataset }) => {
             <tbody>
               {questions.map((question) => (
                 <tr key={question.id}>
-                  <td className="border border-gray-300 p-2">{question.text}</td>
+                  <td className="border border-gray-300 p-2">{question.id}. {question.text}</td>
                   {options.map((option) => (
                     <td
                       key={option}

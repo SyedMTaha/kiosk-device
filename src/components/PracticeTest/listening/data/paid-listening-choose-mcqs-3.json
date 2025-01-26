@@ -2,7 +2,7 @@
     {
       "questions": [
         {
-          "id": 1,
+          "id": 21,
           "text": "What problem did Chantal have at the start of the talk?",
           "options": [
             "Her view of the speaker was blocked.",
@@ -12,7 +12,7 @@
           "correctOption": ["Her view of the speaker was blocked."]
         },
         {
-          "id": 2,
+          "id": 22,
           "text": "What were Hugo and Chantal surprised to hear about the job market?",
           "options": [
             "It has become more competitive than it used to be.",
@@ -22,7 +22,7 @@
           "correctOption": ["There is more variety in it than they had realised."]
         },
         {
-          "id": 3,
+          "id": 23,
           "text": "Hugo and Chantal agree that the speaker’s message was",
           "options": [
             "unfair to them at times.",
@@ -32,7 +32,7 @@
           "correctOption": ["unfair to them at times."]
         },
         {
-          "id": 4,
+          "id": 24,
           "text": "What do Huao and Chantal criticise about their school careers advice?",
           "options": [
             "when they received the advice",
@@ -42,7 +42,7 @@
           "correctOption": ["who gave the advice"]
         },
         {
-          "id": 5,
+          "id": 25,
           "text": "When discussing their future, Hugo and Chantal disagree on",
           "options": [
             "which is the best career in fashion.",
@@ -52,7 +52,7 @@
           "correctOption": ["when to choose a career in fashion."]
         },
         {
-          "id": 6,
+          "id": 26,
           "text": "How does Hugo feel about being an unpaid assistant?",
           "options": [
             "He is realistic about the practice.",
@@ -62,7 +62,7 @@
           "correctOption": ["He is realistic about the practice."]
         },
         {
-          "id": 7,
+          "id": 27,
           "text": "Which TWO mistakes did the speaker admit she made in her first job?",
           "options": [
             "being dishonest to her employer",
@@ -74,7 +74,7 @@
           "correctOption": ["paying too much attention to how she looked","openly disliking her client"]
         },
         {
-          "id": 8,
+          "id": 28,
           "text": "Which TWO pieces of retail information do Hugo and Chantal agree would be useful?",
           "options": [
             "the reasons people return fashion items",

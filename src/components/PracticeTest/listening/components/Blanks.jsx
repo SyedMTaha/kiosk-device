@@ -7,7 +7,7 @@ const Blanks = ({ dataset }) => {
       return acc;
     }, {})
   );
-  
+
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false); // To track if the user finished
 
@@ -64,14 +64,17 @@ const Blanks = ({ dataset }) => {
       } else if (part === '_________') {
         // Input field
         return (
-          <input
-            key={`${questionId}-${index}`}
-            type="text"
-            value={inputValues[questionId] || ''}
-            onChange={(e) => handleInputChange(questionId, e.target.value)}
-            className="border border-black font-bold text-center placeholder-black bg-[#FFE4E1] px-2 py-1 rounded-md mx-1"
-            style={{ minWidth: '100px' }}
-          />
+          <>
+            <input
+              key={`${questionId}-${index}`}
+              type="text"
+              value={inputValues[questionId] || ''}
+              onChange={(e) => handleInputChange(questionId, e.target.value)}
+              className="border border-black font-bold text-center bg-[#FFE4E1] px-2 py-1 rounded-md mx-1 placeholder-gray-800"
+              style={{ minWidth: '100px' }}
+              placeholder={questionId}
+            />
+          </>
         );
       } else {
         // Regular text
@@ -114,11 +117,10 @@ const Blanks = ({ dataset }) => {
             Score: {score} / {dataset[0]?.questions.length}
           </div>
         </>
-      ):(
+      ) : (
         <button
-          className={`fixed bottom-4 right-4 px-6 py-3 rounded-lg text-white font-semibold shadow-lg ${
-            allFieldsFilled ? 'bg-[#DB1738] hover:bg-[#C21530]' : 'bg-gray-400 cursor-not-allowed'
-          }`}
+          className={`fixed bottom-4 right-4 px-6 py-3 rounded-lg text-white font-semibold shadow-lg ${allFieldsFilled ? 'bg-[#DB1738] hover:bg-[#C21530]' : 'bg-gray-400 cursor-not-allowed'
+            }`}
           disabled={!allFieldsFilled}
           onClick={calculateScore}
         >

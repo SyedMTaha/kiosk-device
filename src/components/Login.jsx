@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import img from '../assets/login-img.png';
 import logo from '../assets/logo.png';
-import { FaEye, FaEyeSlash, FaFacebookF, FaGoogle } from 'react-icons/fa'; 
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa'; 
+import { auth } from '../lib/firebase'; // Ensure Firebase is initialized in a separate file
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { useUser } from '../context/context';
 
 const Login = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const {setUser}=useUser();
     const [formData, setFormData] = useState({
         email: '',
         password: ''
     });
-
     const [errors, setErrors] = useState({
         email: '',
-        password: ''
+        password: '',
+        general: ''
     });
 
     const handleChange = (e) => {
@@ -31,13 +35,37 @@ const Login = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (validateForm()) {
-            // Handle login submission
-            console.log('Login form submitted:', formData);
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, formData.email, formData.password);
+                const user = userCredential.user; // Get the signed-in user details
+                setUser(user); // Set the user in the context
+                console.log('Login successful');
+            } catch (error) {
+                setErrors((prevErrors) => ({
+                    ...prevErrors,
+                    general: error.message
+                }));
+            }
         }
     };
+    
+    const handleGoogleSignIn = async () => {
+        const provider = new GoogleAuthProvider();
+        try {
+            const result = await signInWithPopup(auth, provider);
+            const user = result.user; // Get the signed-in user details
+            setUser(user); // Set the user in the context
+            console.log('Google Sign-In successful');
+        } catch (error) {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                general: error.message
+            }));
+        }
+    };    
 
     return (
         <div className="h-screen bg-gradient-to-b from-[#ffe1e1] to-white flex items-center justify-center">
@@ -56,10 +84,11 @@ const Login = () => {
 
                     {/* Social Media Buttons */}
                     <div className="flex gap-6 mb-6 justify-center">
-                        <button className="flex items-center justify-center bg-[#3b5998] text-white py-2 px-6 rounded-md hover:bg-[#2d4373] focus:outline-none transition duration-300 w-full max-w-xs">
-                            <FaFacebookF className="mr-2" /> Facebook
-                        </button>
-                        <button className="flex items-center justify-center bg-[#db4437] text-white py-2 px-6 rounded-md hover:bg-[#c1351d] focus:outline-none transition duration-300 w-full max-w-xs">
+                        <button
+                            type="button"
+                            onClick={handleGoogleSignIn}
+                            className="flex items-center justify-center bg-[#db4437] text-white py-2 px-6 rounded-md hover:bg-[#c1351d] focus:outline-none transition duration-300 w-full max-w-xs"
+                        >
                             <FaGoogle className="mr-2" /> Google
                         </button>
                     </div>
@@ -78,7 +107,7 @@ const Login = () => {
                             />
                             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                         </div>
-                        
+
                         {/* Password Field */}
                         <div className="relative">
                             <input
@@ -107,6 +136,9 @@ const Login = () => {
                                 Login
                             </button>
                         </div>
+
+                        {/* General Error */}
+                        {errors.general && <p className="text-red-500 text-sm mt-4 text-center">{errors.general}</p>}
                     </form>
 
                     {/* Links */}
@@ -123,6 +155,6 @@ const Login = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Login;

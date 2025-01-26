@@ -83,7 +83,7 @@ const MixMcqs = ({ dataset }) => {
         const isMultipleChoice = Array.isArray(question.correctOption) && question.correctOption.length > 1;
         return (
           <div key={question.id} className="mb-6 bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">{question.text}</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">{question.id}. {question.text}</h3>
             <div className="space-y-4">
               {question.options.map((option, index) => (
                 <div key={index} className="flex items-center space-x-3">

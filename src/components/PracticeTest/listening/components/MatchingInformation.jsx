@@ -163,7 +163,8 @@ const MatchingInformation = ({ dataset }) => {
         {/* Left Column: Questions */}
         <div className="text-gray-800 text-lg space-y-4 pb-4">
           {dataset[0].questions.map((question) => (
-            <div key={question.id} className="mb-4">
+            <div key={question.id} className="mb-4 flex items-center">
+              {question.id}. 
               {renderQuestion(question.text, question.id)}
             </div>
           ))}

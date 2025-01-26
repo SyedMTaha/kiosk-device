@@ -4,6 +4,7 @@ import MixMcqs from "./components/MixMcqs";
 import MatchingInformation from "./components/MatchingInformation"
 import Maps from "./components/Maps";
 import TableCompletion from "./components/TableCompletion";
+// Import datasets
 import completeNotesDataset from './data/paid-listening-complete-notes.json'
 import chooseMcqsPart3 from './data/paid-listening-choose-mcqs-3.json'
 import chooseMcqsPart2 from './data/paid-listening-choose-mcqs-2.json'
@@ -12,7 +13,7 @@ import MatchingInformationData from './data/paid-listening-matching-information.
 import MapsData from './data/paid-listening-map.json'
 import TablesData from './data/paid-listening-table-completion.json'
 
-const TestComponent = ({ questions, buttonColor, type }) => {
+const TestComponent = ({type }) => {
   const [dataset,setDataset]=useState(null)
   const [DynamicComponent, setDynamicComponent] = useState(null);
   const typeMapping={
