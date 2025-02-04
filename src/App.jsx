@@ -1,50 +1,37 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import Footer from './components/Footer';
-import Home from './components/Home/index';
-import Login from './components/Login';
-import Navbar from './components/Navbar';
-import SignUp from './components/Signup';
-import Writing from './components/MockTest/Writing';
-import Speaking from './components/MockTest/Speaking';
-import Listening from './components/MockTest/Listening';
-import Reading from './components/MockTest/Reading';
-import PaidScreen from './components/Home/PaidScreen';
-import ReadingTest from './components/PracticeTest/reading/reading';
-import ListeningTest from './components/PracticeTest/listening/listening';
-
-function ScrollToTop() {
-  const location = useLocation();
-
-  useEffect(() => {
-    document.documentElement.scrollTop = 0; // This will scroll the page to the top position when route changes
-  }, [location]);
-
-  return null;
-}
+import React, { useState } from "react";
 
 function App() {
+  const [email, setEmail] = useState("");
+
+  const handleContinue = () => {
+    if (email) {
+      alert(`Email entered: ${email}`);
+      // Add your logic for handling the email submission here
+    } else {
+      alert("Please enter a valid email address.");
+    }
+  };
+
   return (
-    <Router>
-      {/* <Navbar /> Optionally, you can keep Navbar if it's meant to appear on all pages */}
-      <ScrollToTop /> {/* This component will handle the scroll to top behavior */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/writing" element={<Writing />} />
-        <Route path="/speaking" element={<Speaking />} />
-        <Route path="/listening" element={<Listening />} />
-        <Route path="/reading" element={<Reading />} />
-        <Route path="/paiduser/general" element={<PaidScreen />} />
-        <Route path="/paiduser/academic" element={<PaidScreen />} />
-        <Route path="/paiduser/reading/:type" element={<ReadingTest />} />
-        <Route path="/paiduser/listening/:type" element={<ListeningTest />} />
-        <Route path="/paiduser/speaking/:type" element={<ReadingTest />} />
-        <Route path="/paiduser/writing/:type" element={<ReadingTest />} />
-      </Routes>
-      {/* <Footer />  */}
-    </Router>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-lg text-center max-w-md w-full">
+        <h1 className="text-2xl font-bold text-gray-800 mb-4">Welcome to the KIOSK</h1>
+        <p className="text-gray-600 mb-6">Please enter your email to continue</p>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-4"
+        />
+        <button
+          onClick={handleContinue}
+          className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
   );
 }
 
