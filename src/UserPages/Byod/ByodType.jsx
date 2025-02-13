@@ -21,7 +21,7 @@ const ByodType = () => {
       </div>
 
       {/* Heading */}
-        <div className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handleBackNavigation} >
+        <div className="absolute left-4 top-[55%] transform -translate-y-1/2 cursor-pointer" onClick={handleBackNavigation} >
             <FaArrowLeft className="w-6 h-6 sm:w-8 sm:h-8 text-gray-800 hover:text-gray-600" /> {/* Use FaArrowLeft icon */}
         </div>
       <div className="text-center mt-8">
@@ -40,7 +40,7 @@ const ByodType = () => {
         </div>
 
         {/* Windows Card */}
-        <div className="glassmorphism-card hover:shadow-xl hover:scale-105 hover:border-[#4F46E5] transition-all duration-300 border-2 border-[#1D2788] px-4 pt-2 w-[10vw] text-center rounded-md cursor-pointer" onClick={()=>{navigate('/windows-type')}}>
+        <div className="glassmorphism-card hover:shadow-xl hover:scale-105 hover:border-[#4F46E5] transition-all duration-300 border-2 border-[#1D2788] px-4 pt-2 w-[10vw] text-center rounded-md cursor-pointer" onClick={()=>{navigate('/windows-type-byod')}}>
           <img src={WindowsLogo} alt="Windows" className="w-14 h-14 mx-auto mb-4" />
           <p className="text-xl font-semibold text-gray-800">Windows</p>
         </div>

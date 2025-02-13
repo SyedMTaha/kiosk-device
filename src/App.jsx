@@ -6,6 +6,7 @@ import WindowsType from "./UserPages/Windows/WindowsType";
 import SlideShowTutorial from "./UserPages/Windows/SlideShowTutorial";
 import MacType from "./UserPages/MacOS/MacType";
 import ByodType from "./UserPages/Byod/ByodType";
+import WindowsTypeByod from "./UserPages/Byod/WindowsTypeByod";
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
         <Route path="/select-device" element={<Screen1 />} />
         <Route path="/windows-type" element={<WindowsType />} />
         <Route path="/slideshow-tutorial" element={<SlideShowTutorial />} />
-         <Route path="/mac-type" element={<MacType />} ></Route> 
+        <Route path="/mac-type" element={<MacType />} ></Route> 
         <Route path="/byod-type" element={<ByodType />} />
+        <Route path="/windows-type-byod" element= {<WindowsTypeByod/>} />
       </Routes>
     </Router>
   );
