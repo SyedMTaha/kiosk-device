@@ -19,15 +19,8 @@ import Component14 from './window-components/Component14';
 import Component15 from './window-components/Component15';
 import Component16 from './window-components/Component16';
 
-// Function to handle the Customer Support card click
-const handleCustomerSupportClick = () => {
-    window.open(
-      "https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_MTRmODhjMDMtYjI4My00MjY5LWJiNWYtNDVmNjQzMWJiNTAy%40thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%25221676489c-5c72-46b7-ba63-9ab90c4aad44%2522%252c%2522Oid%2522%253a%2522035f12ea-f596-4c69-886f-9781318014fa%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=cd77a2fc-c431-4278-b94e-7a9589e53455&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true",
-      "_blank" // Opens the link in a new tab
-    );
-  };
 
- 
+
   
   const WindowsTypeByod = () => {
 
@@ -50,13 +43,13 @@ const handleCustomerSupportClick = () => {
         };
       
         // Determine icon color based on counter value
-        const iconColor = (counter === 1 || counter === 2 || counter === 15) ? 'white' : 'black';
+        const iconColor = (counter === 1  || counter === 16) ? 'black' : 'black';
       
         // Map counter values to components
         const components = [
           Component1, Component2, Component3, Component4, Component5,
           Component6, Component7, Component8, Component9, Component10,
-          Component11, 
+          Component11, Component12, Component13, Component14, Component15, Component16, 
         ];
       
         // Get the current component based on the counter
@@ -98,10 +91,7 @@ const handleCustomerSupportClick = () => {
              )}
            </div>
          );
-        
-
-
-    
+   
   
 }
 

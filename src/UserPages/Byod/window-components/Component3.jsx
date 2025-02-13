@@ -1,31 +1,43 @@
-import React from 'react';
+import React from 'react'
 import logo from '../../../assets/logo.png';
+import slide3 from '../../Byod/window-assets/slide3.png';
+import slide3_2 from '../../Byod/window-assets/slide3-2.png';
 
-const Component1 = () => {
+
+const Component3 = () => {
   return (
-    <div className="w-full h-screen bg-[#000F3C] flex flex-col justify-center items-center relative">
-      {/* Logo at Top Center */}
-      <div className="absolute top-4 sm:top-8">
-        <img src={logo} alt="Logo" className="w-8 sm:w-12 h-auto" /> {/* Responsive logo size */}
+    <div className="w-full h-screen bg-white flex flex-col md:flex-row items-center justify-center px-6 md:px-16 relative">
+      
+     {/* Left Panel (Text) */}
+     <div className="md:w-1/2 w-full text-center font-medium md:text-left">
+        <ol className="list-decimal pl-6 text-black">
+          <p className="font-normal text-lg">
+           3. Go to <span className="font-semibold">Local Security Policy</span> → 
+            <span className="font-semibold"> Local Policies</span> → 
+            <span className="font-semibold"> Security</span> Options then set the field as stated.
+          </p>
+        </ol>
+
+        <ol className="list-decimal pl-6 text-black text-lg">
+          <p className="font-normal">
+           4. Open windoes defender Firewall and Check Windows Defender Firewall state. It should be <span className='font-semibold'> On </span>            
+          </p>
+        </ol>
       </div>
 
-      {/* Text at Center */}
-      <div className="text-center px-4"> {/* Added padding for small screens */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#B4FFFF]">
-          MacOS Device Enrollment
-        </h1>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#B4FFFF]">
-          Guide for Intune (Preliminary)
-        </h1>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#B4FFFF]">(How to Guide)</h1>
-      </div>
-
-      {/* Text at Bottom Left */}
-      <div className="absolute bottom-4 left-4 text-white text-sm sm:text-base md:text-lg">
-        telenor | shared services
-      </div>
+    {/* Right Panel (Image) */}
+    <div className="md:w-1/2 w-full flex flex-col justify-center items-center space-y-8 mt-auto md:mt-0 -mb-40 ">
+      <img src={slide3} alt="Policy Table 1" className="w-full md:w-[90%] h-auto shadow-lg" />
+      <img src={slide3_2} alt="Policy Table 2" className="w-full md:w-[90%] h-auto shadow-lg " />
     </div>
+
+    {/* Bottom Left Logo */}
+    <div className="absolute -bottom-32 left-4">
+      <img src={logo} alt="Logo" className="w-8 sm:w-10 h-auto" />
+    </div>
+
+  </div>
   );
 };
 
-export default Component1;
+export default Component3
