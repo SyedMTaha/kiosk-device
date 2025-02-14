@@ -18,6 +18,7 @@ import Component13 from './window-components/Component13';
 import Component14 from './window-components/Component14';
 import Component15 from './window-components/Component15';
 import Component16 from './window-components/Component16';
+import Component17 from './window-components/Component17';
 
 
 
@@ -49,7 +50,7 @@ import Component16 from './window-components/Component16';
         const components = [
           Component1, Component2, Component3, Component4, Component5,
           Component6, Component7, Component8, Component9, Component10,
-          Component11, Component12, Component13, Component14, Component15, Component16, 
+          Component11, Component12, Component13, Component14, Component15, Component16, Component17, 
         ];
       
         // Get the current component based on the counter
