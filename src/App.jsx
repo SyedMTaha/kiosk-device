@@ -7,6 +7,7 @@ import SlideShowTutorial from "./UserPages/Windows/SlideShowTutorial";
 import MacType from "./UserPages/MacOS/MacType";
 import ByodType from "./UserPages/Byod/ByodType";
 import WindowsTypeByod from "./UserPages/Byod/WindowsTypeByod";
+import MacTypeByod from "./UserPages/Byod/MacTypeByod";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/mac-type" element={<MacType />} ></Route> 
         <Route path="/byod-type" element={<ByodType />} />
         <Route path="/windows-type-byod" element= {<WindowsTypeByod/>} />
+        <Route path="/mac-type-byod" element={<MacTypeByod/>}/>
       </Routes>
     </Router>
   );

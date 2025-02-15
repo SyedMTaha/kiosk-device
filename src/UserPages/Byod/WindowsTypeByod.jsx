@@ -38,13 +38,13 @@ import Component17 from './window-components/Component17';
       
         // Function to handle right icon click
         const handleRightClick = () => {
-          if (counter < 20) {
+          if (counter < 17) {
             setCounter(counter + 1); // Increment counter
           }
         };
       
         // Determine icon color based on counter value
-        const iconColor = (counter === 1  || counter === 16) ? 'black' : 'black';
+        const iconColor = (counter === 1  || counter === 17) ? 'black' : 'black';
       
         // Map counter values to components
         const components = [
@@ -94,6 +94,6 @@ import Component17 from './window-components/Component17';
          );
    
   
-}
+};
 
 export default WindowsTypeByod
