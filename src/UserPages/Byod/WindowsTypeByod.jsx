@@ -82,7 +82,7 @@ import Component17 from './window-components/Component17';
                <CurrentComponent />
              </div>
              {/* Right Icon */}
-             {counter !== 20 && (
+             {counter !== 17 && (
                <div
                  className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer z-50"
                  onClick={handleRightClick}

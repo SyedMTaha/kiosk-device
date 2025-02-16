@@ -21,7 +21,7 @@ const ByodType = () => {
       </div>
 
       {/* Heading */}
-        <div className="absolute left-4 top-[55%] transform -translate-y-1/2 cursor-pointer" onClick={handleBackNavigation} >
+        <div className="absolute left-4 top-[55%] transform -translate-y-1/2 cursor-pointer" onClick={()=>{navigate('/select-device')}} >
             <FaArrowLeft className="w-6 h-6 sm:w-8 sm:h-8 text-gray-800 hover:text-gray-600" /> {/* Use FaArrowLeft icon */}
         </div>
       <div className="text-center mt-8">
