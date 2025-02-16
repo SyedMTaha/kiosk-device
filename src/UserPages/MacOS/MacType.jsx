@@ -13,6 +13,11 @@ import Component8 from './components/Component8';
 import Component9 from './components/Component9';
 import Component10 from './components/Component10';
 import Component11 from './components/Component11';
+import Component12 from './components/Component12';
+import Component13 from './components/Component13';
+import Component14 from './components/Component14';
+import Component15 from './components/Component15';
+import Component16 from './components/Component16';
 
 const MacType = () => {
   
@@ -39,19 +44,20 @@ const MacType = () => {
 
   // Function to handle right icon click
   const handleRightClick = () => {
-    if (counter < 20) {
+    if (counter < 16) {
       setCounter(counter + 1); // Increment counter
     }
   };
 
   // Determine icon color based on counter value
-  const iconColor = (counter === 1 || counter === 2 || counter === 15) ? 'white' : 'black';
+  const iconColor = (counter === 1 ) ? 'white' : 'black';
 
   // Map counter values to components
   const components = [
     Component1, Component2, Component3, Component4, Component5,
     Component6, Component7, Component8, Component9, Component10,
-    Component11, 
+    Component11, Component12, Component13, Component14, Component15,
+    Component16
   ];
 
   // Get the current component based on the counter
@@ -68,7 +74,7 @@ const MacType = () => {
    return (
       <div className="h-screen w-full flex flex-col justify-center items-center bg-gray-100 relative">
         {/* Left Icon */}
-        {counter && (
+        {counter!==1 && (
           <div
             className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer z-50"
             onClick={handleLeftClick}

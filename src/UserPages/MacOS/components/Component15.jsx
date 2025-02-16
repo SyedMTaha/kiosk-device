@@ -1,19 +1,18 @@
 import React from 'react';
 import logo from '../../../assets/logo.png';
-import img from '../images/slide4.png'
+import img from '../images/slide15.png'
 
-const Component4 = () => {
+const Component15 = () => {
   return (
     <div className="w-full h-screen bg-white flex flex-col justify-center items-center relative">
       <div className="flex w-full h-screen">
-        <div className="w-1/2 md:pt-16 md:pl-16">
-          <ul className='list-disc md:pl-12'>
-            <li>Select "Not Now" for Accessibility.<br/>(Step 04)</li>
-            <li className='md:pt-[12rem]'>During initial setup, connect to a network manually.</li>
+        <div className="w-1/2 md:pt-16 md:pl-16 flex flex-col md:gap-[12rem]">
+          <ul className='list-disc'>
+            <li>Sign-in when using Edge for first time and sync settings using the account automatically discovered by the Edge</li>
           </ul>
         </div>
         <div className="w-1/2">
-        <img src={img} alt="" className='w-[340px] mx-auto' />
+        <img src={img} alt="" className='w-[490px] mx-auto' />
         </div>
       </div>
 
@@ -25,4 +24,4 @@ const Component4 = () => {
   );
 };
 
-export default Component4;
+export default Component15;
