@@ -1,9 +1,12 @@
 import React from 'react'
 import logo from '../../../assets/logo.png';
+import { useNavigate } from 'react-router-dom';
 import slide11 from '../../Byod/mac-assests/slide11.png'; 
 import slide11_2 from '../../Byod/mac-assests/slide11-2.png';
 
 const Component11 = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full h-screen bg-white flex flex-col md:flex-row items-start md:items-center justify-center px-6 md:px-16 relative">
   
@@ -34,6 +37,10 @@ const Component11 = () => {
       <img src={slide11_2} alt="Policy Table 2" className="w-full md:w-[80%] h-auto shadow-lg " />
     </div>
 
+    {/* Exit Button */}
+    <p className="absolute bottom-4 right-8 text-black font-bold text-sm sm:text-base md:text-xl cursor-pointer" onClick={()=>{navigate('/byod-type')}}>
+        EXIT
+    </p>
 
     {/* Bottom Left Logo */}
     <div className="absolute bottom-4 left-4">

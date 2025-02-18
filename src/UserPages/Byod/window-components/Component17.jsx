@@ -1,10 +1,13 @@
 import React from 'react'
 import logo from '../../../assets/logo.png';
+import { useNavigate } from 'react-router-dom';
 import slide17 from '../../Byod/window-assets/slide17.png';
 import slide17_2 from '../../Byod/window-assets/slide17-2.png';
 
 const Component15 = () => {
-  return (
+   const navigate = useNavigate();
+
+   return (
     <div className="w-full h-screen bg-white flex flex-col md:flex-row items-center justify-center px-6 md:px-16 relative">      
      {/* Left Panel (Text) */}
      <div className="md:w-1/2 w-full text-center font-medium md:text-left text-lg">
@@ -16,19 +19,24 @@ const Component15 = () => {
       <p className=" mt-2 font-normal list-decimal  text-black"> 
           7. Restart and sync your device. Sync option can be found by following step 1.         
       </p>
+      
+    <p className="absolute bottom-4 right-6 text-black font-bold text-sm sm:text-base md:text-xl cursor-pointer" onClick={()=>{navigate('/byod-type')}}>
+        EXIT
+    </p>
 
     </div>
-
     {/* Right Panel (Image) */}
     <div className="md:w-1/2 w-full flex flex-col justify-center items-center space-y-8 mt-auto md:mt-0 ">
-       <img src={slide17} alt="Policy Table 1" className="w-full md:w-[90%] h-auto shadow-lg" /> 
-      <img src={slide17_2} alt="Policy Table 2" className="w-full md:w-[90%] h-auto shadow-lg " />
+      <img src={slide17} alt="Policy Table 1" className="w-full md:w-[90%] h-auto shadow-lg" /> 
+      <img src={slide17_2} alt="Policy Table 2" className="w-full md:w-[90%] h-auto shadow-lg " /> 
     </div>
+
 
     {/* Bottom Left Logo */}
     <div className="absolute bottom-4 left-4 text-white text-sm sm:text-base md:text-lg">
       <img src={logo} alt="Logo" className="w-8 sm:w-10 h-auto " />
     </div>
+
 
   </div>
   );
