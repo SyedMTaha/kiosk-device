@@ -71,7 +71,7 @@ const SlideShowTutorial = () => {
   return (
     <div className="h-screen w-full flex flex-col justify-center items-center bg-gray-100 relative">
       {/* Left Icon */}
-      {counter !== 1 && (
+      {counter && (
         <div
           className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer z-50"
           onClick={handleLeftClick}
