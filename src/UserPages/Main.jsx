@@ -5,7 +5,10 @@ import { useNavigate } from "react-router-dom";
 function Main() {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
-  const navigate=useNavigate();
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const allowedEmail = ["Syed.fahad1@telenor.com"];
+
   const validateEmail = (email) => {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return regex.test(email);
@@ -13,11 +16,34 @@ function Main() {
 
   const handleContinue = () => {
     if (validateEmail(email)) {
-      navigate('/select-device')
+      if (allowedEmail.includes(email)) {
+        // Start the loading process
+        setLoading(true);
+
+        // Simulate data fetching and device verification
+        setTimeout(() => {
+          // After the "loading", navigate to the select device page
+          navigate('/select-device');
+        }, 3000); // 3 seconds delay for simulation
+      } else {
+        navigate('/not-allowed');
+      }
     } else {
       setIsValidEmail(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-white">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-24 w-24 border-t-4 border-green-500 mx-auto mb-4"></div>
+          <p className="text-xl font-semibold text-gray-800">Fetching data from the user...</p>
+          <p className="text-lg text-gray-600 mt-4">Verifying your device...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
@@ -36,9 +62,8 @@ function Main() {
             setEmail(e.target.value);
             setIsValidEmail(true); // Reset validation on change
           }}
-          className={`w-full px-4 py-3 border ${
-            isValidEmail ? "border-gray-300" : "border-red-500"
-          } rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-4 text-gray-700 placeholder-gray-400`}
+          className={`w-full px-4 py-3 border ${isValidEmail ? "border-gray-300" : "border-red-500"
+            } rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-4 text-gray-700 placeholder-gray-400`}
         />
         {!isValidEmail && (
           <p className="text-red-500 text-sm mb-4">Please enter a valid email address.</p>
