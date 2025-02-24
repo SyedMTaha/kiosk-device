@@ -26,9 +26,9 @@ const Component5 = () => {
     </div>
 
     {/* Right Panel (Image) */}
-    <div className="md:w-1/2 w-full flex flex-col justify-center items-center space-y-8 mt-auto md:mt-0 -mb-10 ">
-      <img src={slide5} alt="Policy Table 1" className="w-full md:w-[90%] h-auto shadow-lg" />
-      <img src={slide5_2} alt="Policy Table 2" className="w-full md:w-[90%] h-auto shadow-lg " />
+    <div className="md:w-1/2 w-full flex flex-col justify-center items-center space-y-8 mt-auto md:mt-0 ">
+      <img src={slide5} alt="Policy Table 1" className="w-full md:w-[80%] h-auto shadow-lg" />
+      <img src={slide5_2} alt="Policy Table 2" className="w-full md:w-[85%] h-auto shadow-lg " />
     </div>
 
     {/* Bottom Left Logo */}

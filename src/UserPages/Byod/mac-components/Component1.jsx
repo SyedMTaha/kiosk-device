@@ -31,7 +31,7 @@ const Component1 = () => {
     </div>
 
      {/* Right Panel (Image) */}
-     <div className="md:w-1/2 w-full flex flex-col justify-center items-center space-y-8 mt-auto md:mt-0  ">
+     <div className="md:w-1/2 w-full flex flex-col justify-center items-center space-y-7 mt-auto md:mt-0  ">
       <img src={slide1} alt="Policy Table 1" className="w-full md:w-[90%] h-auto shadow-lg" />
       <img src={slide1_2} alt="Policy Table 2" className="w-full md:w-[90%] h-auto shadow-lg " />
     </div>

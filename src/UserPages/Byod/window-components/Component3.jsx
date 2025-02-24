@@ -26,13 +26,13 @@ const Component3 = () => {
       </div>
 
     {/* Right Panel (Image) */}
-    <div className="md:w-1/2 w-full flex flex-col justify-center items-center space-y-8 mt-auto md:mt-0 -mb-40 ">
-      <img src={slide3} alt="Policy Table 1" className="w-full md:w-[90%] h-auto shadow-lg" />
-      <img src={slide3_2} alt="Policy Table 2" className="w-full md:w-[90%] h-auto shadow-lg " />
+    <div className="md:w-1/2 w-full flex flex-col justify-center items-center space-y-8 mt-auto md:mt-0 ">
+      <img src={slide3} alt="Policy Table 1" className="w-full md:w-[70%] h-auto shadow-lg" />
+      <img src={slide3_2} alt="Policy Table 2" className="w-full md:w-[70%] h-auto shadow-lg " />
     </div>
 
     {/* Bottom Left Logo */}
-    <div className="absolute -bottom-32 left-4">
+    <div className="absolute bottom-4 left-4">
       <img src={logo} alt="Logo" className="w-8 sm:w-10 h-auto" />
     </div>
 
